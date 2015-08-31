@@ -4,7 +4,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  * Created by Vandegrift InvenTeam on 8/31/2015.
  */
 public class RookieChallenge {
-    //varibales here
+    //variables here
 
 
     @Override

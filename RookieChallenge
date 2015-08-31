@@ -1,0 +1,24 @@
+package com.qualcomm.ftcrobotcontroller.opmodes;
+
+/**
+ * Created by Vandegrift InvenTeam on 8/31/2015.
+ */
+public class RookieChallenge {
+    //varibales here
+
+
+    @Override
+    public void init(){
+        //Hardware Mapping Here
+
+    }
+
+
+    @Override
+    public void loop(){
+        //tank controls for gamepad 1. When you hold the right trigger, it cuts the speed to 20%.
+
+        //Manipulator for gamepad 2. Pick a stick to be up and down and use the triggers for the action.
+
+    }
+}

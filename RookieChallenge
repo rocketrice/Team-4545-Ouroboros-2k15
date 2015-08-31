@@ -5,6 +5,10 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  */
 public class RookieChallenge {
     //varibales here
+    DcMotor left;
+    DcMotor right;
+    double HALFSPEED = .2;
+    
 
 
     @Override
@@ -17,7 +21,28 @@ public class RookieChallenge {
     @Override
     public void loop(){
         //tank controls for gamepad 1. When you hold the right trigger, it cuts the speed to 20%.
-
+        if (gamepad1.right_trigger == 1) {
+            if (gamepad1.right_stick_y > .05) {
+                right.setPower(HALFSPEED * -1); 
+            }
+            else if (gamepad1.right_stick_y < -.05) {
+                right.setPower(HALFSPEED);
+            }
+            else{
+                right.setPower(0)
+            }
+            
+            if (gamepad1.left_stick_y > .05) {
+                left.setPower(HALFSPEED);
+            }
+            else if (gamepad1.left_stick_y < -.05) {
+                left.setPower(HALFSPEED * -1);
+            }
+            else{
+                left.setPower(0);
+            }
+        }
+        
         //Manipulator for gamepad 2. Pick a stick to be up and down and use the triggers for the action.
 
     }

@@ -7,6 +7,7 @@ public class RookieChallenge {
     //variables here
     DcMotor rightMotor;
     DcMotor leftMotor;
+    int HALFSPEED = .2;
 
     @Override
     public void init(){
@@ -19,7 +20,31 @@ public class RookieChallenge {
     public void loop(){
         //tank controls for gamepad 1. When you hold the right trigger, it cuts the speed to 20%.
         if (gamepad1.right_trigger == 1) {
-        
+            if (gamepad1.right_stick_y > .05) {
+                rightMotor.setPower(HALFSPEED * -1);
+            }
+            else {
+                rightMotor.setPower(0);
+            }
+            if (gamepad1.right_stick_y < -.05) {
+                rightMotor.setPower(HALFSPEED);
+            }
+            else{
+                rightMotor.setPower(0);
+            }
+            if (gamepad1.left_stick_y > .05) {
+                leftMotor.setPower(HALFSPEED);
+            }
+            else {
+                leftMotor.setPower(0);
+            }
+            if (gamepad1.left_stick_y < -.05) {
+                leftMotor.setPower(HALFSPEED * -1);
+            }
+            else{
+                leftMotor.setPower(0);
+            }
+        }
         
         else {
             if (abs(gamepad1.right_stick_y) > 0.05) {

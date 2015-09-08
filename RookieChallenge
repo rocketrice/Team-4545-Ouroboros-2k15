@@ -8,6 +8,7 @@ public class RookieChallenge {
     DcMotor rightMotor;
     DcMotor leftMotor;
     int HALFSPEED = .2;
+    DcMotor pulley;
 
     @Override
     public void init(){
@@ -63,4 +64,17 @@ public class RookieChallenge {
         //Manipulator for gamepad 2. Pick a stick to be up and down and use the triggers for the action.
 
     }
+    //pulley system 
+        if (gamepad2.right_stick_y > .05) {
+            pulley.setPower(gamepad2.right_stick_y * -1);
+        }
+        else if (gamepad2.right_stick_y < -.05) {
+            pulley.setPower(gamepad2.right_stick_y);
+            
+        }
+        else {
+            pulley.setPower(0);
+         }
+    
+    
 }

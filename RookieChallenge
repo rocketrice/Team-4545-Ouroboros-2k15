@@ -63,8 +63,7 @@ public class RookieChallenge {
         }
         //Manipulator for gamepad 2. Pick a stick to be up and down and use the triggers for the action.
 
-    }
-    //pulley system 
+ //pulley system 
         if (gamepad2.right_stick_y > .05) {
             pulley.setPower(gamepad2.right_stick_y * -1);
         }
@@ -75,6 +74,7 @@ public class RookieChallenge {
         else {
             pulley.setPower(0);
          }
-    
-    
+
+    }
+   
 }
